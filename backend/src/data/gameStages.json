@@ -1,0 +1,140 @@
+{
+  "stage1": {
+    "id": "stage1",
+    "title": "Initial Alert",
+    "description": "Your monitoring dashboard detects unusual file activity. Some files appear to be encrypting. Your company may be under a ransomware attack. You have 45 seconds to decide.",
+    "timer": 45,
+    "options": [
+      {
+        "id": "investigateLogs",
+        "text": "Investigate System Logs",
+        "nextStage": "stage2",
+        "feedback": "You delve into the logs and confirm suspicious activity."
+      },
+      {
+        "id": "isolateSystems",
+        "text": "Immediately Isolate Affected Systems",
+        "nextStage": "stage3",
+        "feedback": "You isolate the systems, slowing the spread but risking operational disruption."
+      },
+      {
+        "id": "ignoreAlert",
+        "text": "Ignore the Alert",
+        "nextStage": "failure",
+        "feedback": "You ignore the alert. The ransomware spreads unchecked."
+      }
+    ]
+  },
+  "stage2": {
+    "id": "stage2",
+    "title": "Log Analysis",
+    "description": "Your detailed investigation confirms that a ransomware attack is in progress. Files are being encrypted rapidly.",
+    "timer": 30,
+    "options": [
+      {
+        "id": "notifyTeam",
+        "text": "Notify IT/Security Team Immediately",
+        "nextStage": "stage3",
+        "feedback": "Your prompt notification mobilizes the team."
+      },
+      {
+        "id": "manualDecrypt",
+        "text": "Attempt Manual Decryption",
+        "nextStage": "failure",
+        "feedback": "Your attempt to manually decrypt files fails, causing further delays."
+      }
+    ]
+  },
+  "stage3": {
+    "id": "stage3",
+    "title": "Coordination and Communication",
+    "description": "With the attack escalating, you need to coordinate your response. Multiple stakeholders are involved and your communication strategy is critical.",
+    "timer": 40,
+    "options": [
+      {
+        "id": "alertInternal",
+        "text": "Alert Internal Teams and Activate Incident Response",
+        "nextStage": "stage4",
+        "feedback": "Your team begins containment measures."
+      },
+      {
+        "id": "contactExperts",
+        "text": "Contact External Cybersecurity Experts and Law Enforcement",
+        "nextStage": "stage4",
+        "feedback": "External experts join the response, enhancing your defense."
+      },
+      {
+        "id": "minimalComm",
+        "text": "Keep Communication Minimal",
+        "nextStage": "failure",
+        "feedback": "Poor communication leads to confusion and exacerbates the breach."
+      }
+    ]
+  },
+  "stage4": {
+    "id": "stage4",
+    "title": "Containment and Mitigation",
+    "description": "The ransomware continues to spread. You must act quickly to contain the breach before irreversible damage is done.",
+    "timer": 30,
+    "options": [
+      {
+        "id": "isolateAndShutdown",
+        "text": "Isolate and Shut Down Affected Systems",
+        "nextStage": "stage5",
+        "feedback": "Containment is achieved, though with some operational disruption."
+      },
+      {
+        "id": "restoreBackup",
+        "text": "Deploy Backup Systems and Restore from Offline Data",
+        "nextStage": "stage5",
+        "feedback": "Restoration begins, minimizing data loss."
+      },
+      {
+        "id": "patchVulnerabilities",
+        "text": "Update Firewalls and Patch Vulnerabilities",
+        "nextStage": "failure",
+        "feedback": "Delaying action to patch vulnerabilities gives the ransomware time to spread further."
+      }
+    ]
+  },
+  "stage5": {
+    "id": "stage5",
+    "title": "Recovery and Forensics",
+    "description": "The immediate threat has been contained. Now, you must investigate the breach, recover data, and report the incident to comply with regulations.",
+    "timer": 20,
+    "options": [
+      {
+        "id": "forensicAnalysis",
+        "text": "Run Forensic Analysis to Identify Vulnerabilities",
+        "nextStage": "complete",
+        "feedback": "Forensic analysis identifies the root cause, paving the way for improved security."
+      },
+      {
+        "id": "complianceReport",
+        "text": "File a Compliance Report",
+        "nextStage": "complete",
+        "feedback": "You successfully report the incident, ensuring regulatory compliance."
+      },
+      {
+        "id": "postReview",
+        "text": "Conduct a Post-Incident Review and Staff Training",
+        "nextStage": "complete",
+        "feedback": "Your review leads to long-term improvements in cybersecurity practices."
+      }
+    ]
+  },
+  "complete": {
+    "id": "complete",
+    "title": "Simulation Complete",
+    "description": "The incident is resolved and lessons have been learned. Your actions have improved the company's cybersecurity posture.",
+    "timer": 0,
+    "options": []
+  },
+  "failure": {
+    "id": "failure",
+    "title": "Simulation Failed",
+    "description": "Your response led to a critical breach. The ransomware compromised the systems, and significant damage has been incurred. Reflect on your decisions to learn and improve.",
+    "timer": 0,
+    "options": []
+  }
+}
